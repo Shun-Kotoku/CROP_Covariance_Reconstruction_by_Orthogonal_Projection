@@ -29,6 +29,10 @@ By default, the code expects:
 - Input signal at: `<folderName>/input_1.01e6.bin`
 - State matrix at: `<folderName>/stateData_<filenameBase>.bin`
 
+**Note — column-major order:** Armadillo matrices are stored in column-major (Fortran) order, so when writing the state matrix to a raw binary file, the data must be laid out column-by-column (all values of column 0, then all values of column 1, and so on).
+
+For example, if you simulate the reservoir dynamics in NumPy and hold the state matrix as an array of shape `(T, N)` (time steps x nodes, i.e. row-major by default), you need to transpose it before calling `.tofile()` (`matrix.T.tofile(path)`), so that the resulting byte layout matches column-major order. The 1D input signal is unaffected by this, since a vector has no row/column ordering ambiguity.
+
 ## Adapting to Your Own Data
 Edit `setOutputFile()` in `Initialization.h` to match your data:
 
