@@ -75,3 +75,13 @@ Each row has `2 * maxDegree + 1` columns (`maxDegree` = number of elements in `s
 1. Columns `1` to `maxDegree` — the delay steps used in this term, zero-padded on the right if fewer than `maxDegree` steps are used.
 2. Columns `maxDegree + 1` to `2 * maxDegree` — the Legendre polynomial degree applied at each corresponding delay, zero-padded the same way.
 3. Last column — `C_T`, as described above.
+
+## Example: Generating Input Data and Visualizing Results
+
+`CROP_sample.ipynb` provides a worked example covering the full pipeline:
+
+1. Generates a one-dimensional i.i.d. Uniform[-1, 1] input signal and saves it as `input_1.01e6.bin`.
+2. Simulates a quadratic reservoir system driven by that input, and saves the resulting state matrix as `stateData_quadsys_<noise_std>_1.01e6.bin`, in the binary format described above.
+3. After running `MC.cpp` on this data, loads the resulting `output_est_IPC_*.txt` file and visualizes the estimated information processing capacity, broken down by delay and by polynomial degree.
+
+This notebook is intended as a template — adapt the reservoir dynamics (`run_quadratic_system_vectorized`) and the parsing/plotting cells to your own system.

@@ -5,11 +5,11 @@
 void setOutputFile(Data& data) {
     data.folderName = "";
     data.inputfileName = data.folderName + "input_1.01e6.bin";
-    data.inputLength = 11000;
+    data.inputLength = 1010000;
 
     data.startTargetRow = 10000;
     data.nodeNum = 100; 
-    data.filenameBase = "quadsys_0.0005_rep=1_leng=1e3";
+    data.filenameBase = "quadsys_0.0005_1.01e6";
     data.statedatafileName = data.folderName + "stateData_" + data.filenameBase + ".bin";
     data.directIPCSavefile = data.folderName + "output_IPC_" + data.filenameBase + ".txt";
     data.CROPIPCSavefile = data.folderName + "output_est_IPC_" + data.filenameBase + ".txt";

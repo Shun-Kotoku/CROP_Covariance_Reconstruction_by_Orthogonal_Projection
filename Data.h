@@ -37,7 +37,7 @@ struct Data {
 	arma::Col<double> reconstTest;
 
 	arma::Mat<double> mumu;
-	arma::Mat<double> mumu_test;
+	arma::Mat<double> mumu_Test;
 
 	arma::Mat<double> muylmuyl;
 	arma::Mat<double> muylmuyl_Test;
