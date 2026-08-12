@@ -42,7 +42,7 @@ Edit `setOutputFile()` in `Initialization.h` to match your data:
 - `data.startTargetRow` — number of initial rows to discard (transient). This must be larger than the maximum value in `stepsForMemory`, since earlier target values are indexed relative to this offset.
 - `data.nodeNum` — number of reservoir nodes (excluding the bias column)
 - `data.filenameBase` — naming pattern used to locate your state matrix file
-- `data.stepsForMemory` — max delay steps to evaluate, for each polynomial degree
+- `data.stepsForMemory` — for each polynomial degree (1st to `maxDegree`-th), the maximum delay step to evaluate. This should be tuned based on your reservoir size, activation function, and the compute time/power you can afford: the number of delay/degree combinations grows combinatorially, and higher polynomial degrees combined with long delays make this blow up quickly. Start with small values and increase only as needed.
 
 ## Build
 This repository includes a `Makefile`:
