@@ -78,7 +78,7 @@ Each row has `2 * maxDegree + 1` columns (`maxDegree` = number of elements in `s
 
 ## Example: Generating Input Data and Visualizing Results
 
-`CROP_sample.ipynb` provides a worked example covering the full pipeline:
+`sample.ipynb` provides a worked example covering the full pipeline:
 
 1. Generates a one-dimensional i.i.d. Uniform[-1, 1] input signal and saves it as `input_1.01e6.bin`.
 2. Simulates a quadratic reservoir system driven by that input, and saves the resulting state matrix as `stateData_quadsys_<noise_std>_1.01e6.bin`, in the binary format described above.
