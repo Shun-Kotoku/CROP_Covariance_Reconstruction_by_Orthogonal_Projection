@@ -31,7 +31,7 @@ By default, the code expects:
 
 **Note — column-major order:** Armadillo matrices are stored in column-major (Fortran) order, so when writing the state matrix to a raw binary file, the data must be laid out column-by-column (all values of column 0, then all values of column 1, and so on).
 
-For example, if you simulate the reservoir dynamics in NumPy and hold the state matrix as an array of shape `(T, N)` (time steps x nodes, i.e. row-major by default), you need to transpose it before calling `.tofile()` (`matrix.T.tofile(path)`), so that the resulting byte layout matches column-major order. The 1D input signal is unaffected by this, since a vector has no row/column ordering ambiguity.
+For example, if you simulate the reservoir dynamics in NumPy and hold the state matrix as an array of shape `(T, N)` (time steps x nodes, i.e. row-major by default), you need to transpose it before calling `.tofile()` (`matrix.T.tofile(path)`), so that the resulting byte layout matches column-major order. 
 
 ## Adapting to Your Own Data
 Edit `setOutputFile()` in `Initialization.h` to match your data:
