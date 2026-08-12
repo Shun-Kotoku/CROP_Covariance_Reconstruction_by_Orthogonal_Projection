@@ -52,7 +52,7 @@ Build with:
 
 ```bash
 make
-``
+```
 
 Run with:
 
